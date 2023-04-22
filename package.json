@@ -23,6 +23,11 @@
       "react-app/jest"
     ]
   },
+  "engines": {
+    "npm": "Please use yarn",
+    "node": ">=16.0.0 <17.0.0",
+    "yarn": ">=1.19.0"
+  },
   "browserslist": {
     "production": [
       ">0.2%",
