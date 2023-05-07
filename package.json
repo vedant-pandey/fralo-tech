@@ -23,6 +23,7 @@
     "react-color": "^2.19.3",
     "react-contenteditable": "^3.3.7",
     "react-dom": "18.2.0",
+    "react-icons": "^4.8.0",
     "react-is": "18.2.0",
     "react-youtube": "10.1.0",
     "shallowequal": "1.1.0",
