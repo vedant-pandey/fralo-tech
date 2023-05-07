@@ -121,8 +121,8 @@ export const DefaultLayerHeader: React.FC = () => {
         isHidden={hidden}
         onClick={() => actions.setHidden(id, !hidden)}
       >
-        Eye
-        {/* <Eye /> */}
+        {/* Eye */}
+        <Eye />
       </Hide>
       <div className="inner">
         <div ref={layerHeader}>
