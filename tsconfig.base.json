@@ -15,6 +15,7 @@
     "skipDefaultLibCheck": true,
     "baseUrl": ".",
     "paths": {
+      "@fralo-tech/base-builder": ["packages/base-builder/src/index.ts"],
       "@fralo-tech/components": ["packages/components/src/index.ts"]
     }
   },
