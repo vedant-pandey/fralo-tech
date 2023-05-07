@@ -1,14 +1,10 @@
 // eslint-disable-next-line @typescript-eslint/no-unused-vars
 import styles from './app.module.css';
+import {BaseBuilder} from '@fralo-tech/builder-core'
 
 export function App() {
   return (
-    <div>
-      <h1>
-        <span> Hello there, </span>
-        Welcome example 👋
-      </h1>
-    </div>
+    <BaseBuilder />
   );
 }
 
