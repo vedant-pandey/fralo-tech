@@ -3,9 +3,9 @@ import React from 'react';
 import styled from 'styled-components';
 
 import { EditableLayerName } from './EditableLayerName';
-import { ReactComponent as Arrow } from './svg/arrow.svg';
-import { ReactComponent as Eye } from './svg/eye.svg';
-import { ReactComponent as Linked } from './svg/linked.svg';
+import { SlArrowUp as Arrow } from 'react-icons/sl';
+import { VscLinkExternal as Linked } from 'react-icons/vsc'
+import { AiFillEye as Eye } from 'react-icons/ai'
 
 import { useLayer } from '../useLayer';
 
@@ -121,15 +121,13 @@ export const DefaultLayerHeader: React.FC = () => {
         isHidden={hidden}
         onClick={() => actions.setHidden(id, !hidden)}
       >
-        Eye
-        {/* <Eye /> */}
+        <Eye />
       </Hide>
       <div className="inner">
         <div ref={layerHeader}>
           {topLevel ? (
             <TopLevelIndicator>
-              Linked
-              {/* <Linked /> */}
+              <Linked />
             </TopLevelIndicator>
           ) : null}
 
@@ -139,8 +137,7 @@ export const DefaultLayerHeader: React.FC = () => {
           <div>
             {children && children.length ? (
               <Expand expanded={expanded} onMouseDown={() => toggleLayer()}>
-                Arrow
-                {/* <Arrow /> */}
+                <Arrow />
               </Expand>
             ) : null}
           </div>
