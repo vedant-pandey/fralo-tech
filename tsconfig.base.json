@@ -15,9 +15,11 @@
     "skipDefaultLibCheck": true,
     "baseUrl": ".",
     "paths": {
-      "@fralo-tech/builder-core": ["packages/builder-core/src/index.ts"],
-      "@fralo-tech/builder-utils": ["packages/builder-utils/src/index.ts"],
-      "@fralo-tech/components": ["packages/components/src/index.ts"]
+      "@fralo-tech/builder": ["packages/builder/src/index"],
+      "@fralo-tech/builder-core": ["packages/builder-core/src/index"],
+      "@fralo-tech/builder-layers": ["packages/builder-layers/src/index"],
+      "@fralo-tech/builder-utils": ["packages/builder-utils/src/index"],
+      "@fralo-tech/components": ["packages/components/src/index"]
     }
   },
   "exclude": ["node_modules", "tmp"]
