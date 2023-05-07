@@ -3,15 +3,14 @@ import { Tooltip } from '@material-ui/core';
 import React from 'react';
 import styled from 'styled-components';
 
-import ButtonSvg from '../../../public/icons/toolbox/button.svg';
-import SquareSvg from '../../../public/icons/toolbox/rectangle.svg';
-import TypeSvg from '../../../public/icons/toolbox/text.svg';
-import YoutubeSvg from '../../../public/icons/toolbox/video-line.svg';
+import {AiOutlineLink as ButtonSvg} from 'react-icons/ai';
+import {BiRectangle as SquareSvg} from 'react-icons/bi';
+import {TbSquareLetterT as TypeSvg} from 'react-icons/tb';
+import {ImPlay as YoutubeSvg} from 'react-icons/im';
 import { Button } from '../../selectors/Button';
 import { Container } from '../../selectors/Container';
 import { Text } from '../../selectors/Text';
 import { Video } from '../../selectors/Video';
-import Image from 'next/image';
 
 const ToolboxDiv = styled.div<{ enabled: boolean }>`
   transition: 0.4s cubic-bezier(0.19, 1, 0.22, 1);
@@ -63,7 +62,7 @@ export const Toolbox = () => {
         >
           <Tooltip title="Container" placement="right">
             <Item className="m-2 pb-2 cursor-pointer block" move>
-              <Image src={SquareSvg} alt='' />
+              <SquareSvg />
             </Item>
           </Tooltip>
         </div>
@@ -74,21 +73,21 @@ export const Toolbox = () => {
         >
           <Tooltip title="Text" placement="right">
             <Item className="m-2 pb-2 cursor-pointer block" move>
-              <Image src={TypeSvg} alt='' />
+              <TypeSvg />
             </Item>
           </Tooltip>
         </div>
         <div ref={(ref) => create(ref, <Button />)}>
           <Tooltip title="Button" placement="right">
             <Item className="m-2 pb-2 cursor-pointer block" move>
-              <Image src={ButtonSvg} alt='' />
+              <ButtonSvg />
             </Item>
           </Tooltip>
         </div>
         <div ref={(ref) => create(ref, <Video />)}>
           <Tooltip title="Video" placement="right">
             <Item className="m-2 pb-2 cursor-pointer block" move>
-              <Image src={YoutubeSvg} alt='' />
+              <YoutubeSvg />
             </Item>
           </Tooltip>
         </div>

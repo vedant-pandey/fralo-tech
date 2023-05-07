@@ -4,10 +4,10 @@ import cx from 'classnames';
 import React from 'react';
 import styled from 'styled-components';
 
-import CheckmarkSvg from '../../../public/icons/check.svg';
-import CustomizeSvg from '../../../public/icons/customize.svg';
-import RedoSvg from '../../../public/icons/toolbox/redo.svg';
-import UndoSvg from '../../../public/icons/toolbox/undo.svg';
+import { AiOutlineCheck as CheckmarkSvg } from 'react-icons/ai';
+import { HiOutlinePencil as CustomizeSvg } from 'react-icons/hi';
+import { AiOutlineRedo as RedoSvg } from 'react-icons/ai';
+import { AiOutlineUndo as UndoSvg } from 'react-icons/ai';
 import Image from 'next/image';
 
 const HeaderDiv = styled.div`
@@ -66,12 +66,12 @@ export const Header = () => {
           <div className="flex-1 flex">
             <Tooltip title="Undo" placement="bottom">
               <Item disabled={!canUndo} onClick={() => actions.history.undo()}>
-                <Image src={UndoSvg} alt=''/>
+                <Image src={UndoSvg} alt="" />
               </Item>
             </Tooltip>
             <Tooltip title="Redo" placement="bottom">
               <Item disabled={!canRedo} onClick={() => actions.history.redo()}>
-                <Image src={RedoSvg} alt='' />
+                <Image src={RedoSvg} alt="" />
               </Item>
             </Tooltip>
           </div>
@@ -90,7 +90,11 @@ export const Header = () => {
             }}
           >
             {enabled ? 'Checkmark' : 'Customize'}
-            {enabled ? <Image src={CheckmarkSvg} alt='' /> : <Image src={CustomizeSvg} alt='' />}
+            {enabled ? (
+              <Image src={CheckmarkSvg} alt="" />
+            ) : (
+              <Image src={CustomizeSvg} alt="" />
+            )}
             {enabled ? 'Finish Editing' : 'Edit'}
           </Btn>
         </div>

@@ -4,9 +4,8 @@ import React, { useState } from 'react';
 import styled from 'styled-components';
 
 import { SidebarItem } from './SidebarItem';
-
-import CustomizeIcon from '../../../../public/icons/customize.svg';
-import LayerIcon from '../../../../public/icons/layers.svg';
+import {HiOutlinePencil as CustomizeIcon} from 'react-icons/hi';
+import {BsFillLayersFill as LayerIcon} from 'react-icons/bs';
 import { Toolbar } from '../../Toolbar';
 
 export const SidebarDiv = styled.div<{ enabled: boolean }>`
