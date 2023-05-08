@@ -10,6 +10,5 @@ export default Story;
 export const Primary = {
   args: {
     value: 10,
-    onChange: () => console.log('change')
   },
 };

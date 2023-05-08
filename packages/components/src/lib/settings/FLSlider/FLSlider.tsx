@@ -3,7 +3,10 @@ import './FLSlider.css';
 import { Slider, SliderProps } from '@material-ui/core';
 import { withStyles } from '@material-ui/core/styles';
 
-export type FLSliderProps = SliderProps
+export type FLSliderProps = {
+  value: number;
+  onChange?: (event: React.ChangeEvent<{}>, value: number | number[]) => void;
+}
 
 export function FLSlider(props: FLSliderProps) {
   const iOSBoxShadow =
@@ -63,6 +66,7 @@ export function FLSlider(props: FLSliderProps) {
 
   return (
     <SliderStyled value={props.value} onChange={props.onChange} />
+    // <input type="range" min="0" max="100" value="40" className="range" />
   );
 }
 
