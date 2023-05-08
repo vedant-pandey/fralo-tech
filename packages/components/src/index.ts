@@ -1,2 +1,1 @@
-export * from './settings/FLSlider/FLSlider';
-export * from './lib/components';
+export * from './lib';
