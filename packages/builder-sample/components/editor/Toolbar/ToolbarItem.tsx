@@ -1,6 +1,6 @@
 import { useNode } from '@fralo-tech/builder-core';
 import { Grid, RadioGroup } from '@material-ui/core';
-import React, { ChangeEvent } from 'react';
+import React, { ChangeEvent, useCallback } from 'react';
 import { FLSlider } from '@fralo-tech/components';
 
 import { ToolbarDropdown } from './ToolbarDropdown';
@@ -37,7 +37,7 @@ export const ToolbarItem = ({
 
   const value = Array.isArray(propValue) ? propValue[index] : propValue;
 
-  const sliderHandler = (_: ChangeEvent<object>, value: number): void => {
+  const sliderHandler = useCallback((_: ChangeEvent<object>, value: number | number[]): void => {
     setProp((props: any) => {
       if (Array.isArray(propValue)) {
         props[propKey][index] = onChange ? onChange(value) : value;
@@ -45,7 +45,7 @@ export const ToolbarItem = ({
         props[propKey] = onChange ? onChange(value) : value;
       }
     }, 1000);
-  };
+  }, [index, onChange, propKey, propValue, setProp]);
 
   return (
     <Grid item xs={full ? 12 : 6}>
