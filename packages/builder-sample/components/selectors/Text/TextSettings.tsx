@@ -27,11 +27,16 @@ export const TextSettings = () => {
           <ToolbarRadio value="center" label="Center" />
           <ToolbarRadio value="right" label="Right" />
         </ToolbarItem>
-        <ToolbarItem propKey="fontWeight" type="radio" label="Weight">
+        {/* <ToolbarItem propKey="fontWeight" type="radio" label="Weight">
           <ToolbarRadio value="400" label="Regular" />
           <ToolbarRadio value="500" label="Medium" />
           <ToolbarRadio value="700" label="Bold" />
-        </ToolbarItem>
+        </ToolbarItem> */}
+        <ToolbarItem propKey='fontWeight' type='radio' radioValues={[
+          {label: 'Regular', value:"400"},
+          {label: 'Medium', value:"500"},
+          {label: 'Bold', value:"700"},
+        ]} />
       </ToolbarSection>
       <ToolbarSection
         title="Margin"

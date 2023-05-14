@@ -1,7 +1,7 @@
 import { useNode } from '@fralo-tech/builder-core';
 import { Grid, RadioGroup } from '@material-ui/core';
 import React, { ChangeEvent, useCallback } from 'react';
-import { FLRadioGroup, FLSlider } from '@fralo-tech/components';
+import { FLRadioGroup, FLSlider, RadioItemProps } from '@fralo-tech/components';
 
 import { ToolbarDropdown } from './ToolbarDropdown';
 import { ToolbarTextInput } from './ToolbarTextInput';
@@ -15,6 +15,7 @@ export type ToolbarItemProps = {
   children?: React.ReactNode;
   type: string;
   onChange?: (value: any) => any;
+  radioValues?: RadioItemProps[]
 };
 export const ToolbarItem = ({
   full = false,
@@ -55,6 +56,11 @@ export const ToolbarItem = ({
       props[propKey] = onChange ? onChange(value) : value;
     });
   };
+  const radioChangeEvent2 = (value: string): void => {
+    setProp((props: any) => {
+      props[propKey] = onChange ? onChange(value) : value;
+    });
+  };
   return (
     <Grid item xs={full ? 12 : 6}>
       <div className="mb-2">
@@ -78,20 +84,34 @@ export const ToolbarItem = ({
             {props.label ? (
               <h4 className="text-sm text-light-gray-2">{props.label}</h4>
             ) : null}
-            <FLSlider value={value ? parseInt(value) : 0} onChange={sliderHandler} />
+            <FLSlider
+              value={value ? parseInt(value) : 0}
+              onChange={sliderHandler}
+            />
           </>
         ) : type === 'radio' ? (
           <>
             {props.label ? (
               <h4 className="text-sm text-light-gray-2">{props.label}</h4>
             ) : null}
-            <RadioGroup
+            {props.radioValues ? (
+              <FLRadioGroup
+                radioValues={props.radioValues}
+                onChange={radioChangeEvent2}
+                defaultIndex={0}
+              />
+            ) : (
+              <RadioGroup value={value || 0} onChange={radioChangeEvent}>
+                {props.children}
+              </RadioGroup>
+            )}
+            {/* <RadioGroup
               value={value || 0}
               onChange={radioChangeEvent}
             >
               {props.children}
             </RadioGroup>
-            {/* <FLRadioGroup /> */}
+            <FLRadioGroup radioValues={props.radioValues} onChange={radioChangeEvent} /> */}
           </>
         ) : type === 'select' ? (
           <ToolbarDropdown

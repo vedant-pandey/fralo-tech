@@ -1,7 +1,7 @@
 import styles from './FLRadioGroup.module.css';
 import * as RadioGroup from '@radix-ui/react-radio-group';
 
-type RadioItemProps = {
+export type RadioItemProps = {
   value: string;
   id?: string;
   label: string;
@@ -12,6 +12,9 @@ export interface FLRadioGroupProps {
   children?: React.ReactNode;
   onChange?: any;
   radioValues: RadioItemProps[];
+  ariaLabel?: string;
+  defaultValue?: string;
+  defaultIndex?: number
 }
 
 export function FLRadioGroup(props: FLRadioGroupProps) {
@@ -19,9 +22,9 @@ export function FLRadioGroup(props: FLRadioGroupProps) {
     <form>
       <RadioGroup.Root
         className="flex flex-col gap-2.5"
-        defaultValue="default"
-        aria-label="View density"
-        onValueChange={() => props.onChange()}
+        defaultValue={props.defaultValue ?? (props.defaultIndex ? props.radioValues[props.defaultIndex].value: "")}
+        aria-label={props.ariaLabel}
+        onValueChange={value => props.onChange(value)}
       >
         {props.radioValues.map(({label, value, id}) => (
           <div className="flex items-center">
@@ -33,7 +36,7 @@ export function FLRadioGroup(props: FLRadioGroupProps) {
               <RadioGroup.Indicator className="flex items-center justify-center w-full h-full relative after:content-[''] after:block after:w-[11px] after:h-[11px] after:rounded-[50%] after:bg-violet11" />
             </RadioGroup.Item>
             <label
-              className="text-white text-[15px] leading-none pl-[15px]"
+              className="text-black text-[15px] leading-none pl-[15px]"
               htmlFor={id}
             >
               {label}
