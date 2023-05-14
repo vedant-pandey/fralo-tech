@@ -17,6 +17,6 @@ export const Primary = {
       {label: 'Medium', value:"500"},
       {label: 'Bold', value:"700"},
     ],
-    onChange: (value) => console.log(value)
+    onChange: (value: string) => console.log(value)
   },
 };

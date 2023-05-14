@@ -96,6 +96,7 @@ export const ToolbarItem = ({
             ) : null}
             {props.radioValues ? (
               <FLRadioGroup
+                classname="bg-red"
                 radioValues={props.radioValues}
                 onChange={radioChangeEvent2}
                 defaultIndex={0}

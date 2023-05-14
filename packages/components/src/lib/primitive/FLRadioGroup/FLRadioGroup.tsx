@@ -14,7 +14,7 @@ export interface FLRadioGroupProps {
   radioValues: RadioItemProps[];
   ariaLabel?: string;
   defaultValue?: string;
-  defaultIndex?: number
+  defaultIndex?: number;
 }
 
 export function FLRadioGroup(props: FLRadioGroupProps) {
@@ -29,11 +29,11 @@ export function FLRadioGroup(props: FLRadioGroupProps) {
         {props.radioValues ? props.radioValues.map(({label, value, id}) => (
           <div className="flex items-center">
             <RadioGroup.Item
-              className="bg-white w-[25px] h-[25px] rounded-full shadow-[0_2px_10px] shadow-blackA7 hover:bg-violet3 focus:shadow-[0_0_0_2px] focus:shadow-black outline-none cursor-default"
+              className="w-[15px] h-[15px] rounded-full shadow-[0_2px_10px] shadow-black hover:bg-violet-500 focus:shadow-[0_0_0_2px] focus:shadow-black outline-none cursor-default"
               value={value}
               id={id}
             >
-              <RadioGroup.Indicator className="flex items-center justify-center w-full h-full relative after:content-[''] after:block after:w-[11px] after:h-[11px] after:rounded-[50%] after:bg-violet11" />
+              <RadioGroup.Indicator className="flex items-center justify-center w-full h-full relative after:content-[''] after:block after:w-[11px] after:h-[11px] after:rounded-[50%] after:bg-violet-500" />
             </RadioGroup.Item>
             <label
               className="text-black text-[15px] leading-none pl-[15px]"
