@@ -55,10 +55,15 @@ export const ButtonSettings = () => {
         <ToolbarItem propKey="margin" index={3} type="slider" label="Left" />
       </ToolbarSection>
       <ToolbarSection title="Decoration">
-        <ToolbarItem propKey="buttonStyle" type="radio" label="Style">
-          <ToolbarRadio value="full" label="Full" />
-          <ToolbarRadio value="outline" label="Outline" />
-        </ToolbarItem>
+        <ToolbarItem
+          propKey="buttonStyle"
+          type="radio"
+          label="Style"
+          radioValues={[
+            { value: 'full', label: 'Full' },
+            { value: 'outline', label: 'Outline' },
+          ]}
+        />
       </ToolbarSection>
     </React.Fragment>
   );
