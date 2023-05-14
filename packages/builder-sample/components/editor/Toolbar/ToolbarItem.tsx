@@ -1,5 +1,5 @@
 import { useNode } from '@fralo-tech/builder-core';
-import { Grid, RadioGroup } from '@material-ui/core';
+import { Grid } from '@material-ui/core';
 import React, { ChangeEvent, useCallback } from 'react';
 import { FLRadioGroup, FLSlider, RadioItemProps } from '@fralo-tech/components';
 
@@ -94,25 +94,11 @@ export const ToolbarItem = ({
             {props.label ? (
               <h4 className="text-sm text-light-gray-2">{props.label}</h4>
             ) : null}
-            {props.radioValues ? (
               <FLRadioGroup
-                classname="bg-red"
                 radioValues={props.radioValues}
                 onChange={radioChangeEvent2}
                 defaultIndex={0}
               />
-            ) : (
-              <RadioGroup value={value || 0} onChange={radioChangeEvent}>
-                {props.children}
-              </RadioGroup>
-            )}
-            {/* <RadioGroup
-              value={value || 0}
-              onChange={radioChangeEvent}
-            >
-              {props.children}
-            </RadioGroup>
-            <FLRadioGroup radioValues={props.radioValues} onChange={radioChangeEvent} /> */}
           </>
         ) : type === 'select' ? (
           <ToolbarDropdown
