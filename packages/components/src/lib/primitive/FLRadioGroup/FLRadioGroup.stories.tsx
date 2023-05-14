@@ -12,5 +12,11 @@ export const Primary = {
     ariaLabel: '',
     defaultValue: '',
     defaultIndex: 0,
+    radioValues: [
+      {label: 'Regular', value:"400"},
+      {label: 'Medium', value:"500"},
+      {label: 'Bold', value:"700"},
+    ],
+    onChange: (value) => console.log(value)
   },
 };
