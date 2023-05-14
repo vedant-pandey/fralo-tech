@@ -1,4 +1,4 @@
-import { FLRadioGroup } from '@fralo-tech/components';
+import { FLRadioItem } from '@fralo-tech/components';
 import { FormControlLabel, Radio } from '@material-ui/core';
 import { makeStyles } from '@material-ui/core/styles';
 import classnames from 'classnames';
@@ -52,15 +52,15 @@ const useLabelStyles = makeStyles({
   },
 });
 
-export const ToolbarRadio = ({ value, label }: any) => {
+export const ToolbarRadio = ({ value, label, id='' }: any) => {
   const classes = useLabelStyles({});
   return (
-    // <FormControlLabel
-    //   classes={classes}
-    //   value={value}
-    //   control={<StyledRadio />}
-    //   label={label}
-    // />
-    <FLRadioGroup />
+    <FormControlLabel
+      classes={classes}
+      value={value}
+      control={<StyledRadio />}
+      label={label}
+    />
+    // <FLRadioItem value={value} id={id} label={label} />
   );
 };
