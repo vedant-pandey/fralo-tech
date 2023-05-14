@@ -22,16 +22,11 @@ export const TextSettings = () => {
           type="slider"
           label="Font Size"
         />
-        <ToolbarItem propKey="textAlign" type="radio" label="Align">
-          <ToolbarRadio value="left" label="Left" />
-          <ToolbarRadio value="center" label="Center" />
-          <ToolbarRadio value="right" label="Right" />
-        </ToolbarItem>
-        {/* <ToolbarItem propKey="fontWeight" type="radio" label="Weight">
-          <ToolbarRadio value="400" label="Regular" />
-          <ToolbarRadio value="500" label="Medium" />
-          <ToolbarRadio value="700" label="Bold" />
-        </ToolbarItem> */}
+        <ToolbarItem propKey="textAlign" type="radio" label="Align" radioValues={[
+          {value:"left", label:"Left"},
+          {value:"center", label:"Center"},
+          {value:"right", label:"Right"},
+        ]} />
         <ToolbarItem propKey='fontWeight' type='radio' label="Weight" radioValues={[
           {label: 'Regular', value:"400"},
           {label: 'Medium', value:"500"},
