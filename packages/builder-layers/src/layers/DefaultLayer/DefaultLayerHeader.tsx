@@ -3,9 +3,7 @@ import React from 'react';
 import styled from 'styled-components';
 
 import { EditableLayerName } from './EditableLayerName';
-import { SlArrowUp as Arrow } from 'react-icons/sl';
-import { VscLinkExternal as Linked } from 'react-icons/vsc'
-import { AiFillEye as Eye } from 'react-icons/ai'
+import { AiFillCaretUp, AiOutlineSelect, AiFillEye } from 'react-icons/ai';
 
 import { useLayer } from '../useLayer';
 
@@ -121,13 +119,13 @@ export const DefaultLayerHeader: React.FC = () => {
         isHidden={hidden}
         onClick={() => actions.setHidden(id, !hidden)}
       >
-        <Eye />
+        <AiFillEye />
       </Hide>
       <div className="inner">
         <div ref={layerHeader}>
           {topLevel ? (
             <TopLevelIndicator>
-              <Linked />
+              <AiOutlineSelect />
             </TopLevelIndicator>
           ) : null}
 
@@ -137,7 +135,7 @@ export const DefaultLayerHeader: React.FC = () => {
           <div>
             {children && children.length ? (
               <Expand expanded={expanded} onMouseDown={() => toggleLayer()}>
-                <Arrow />
+                <AiFillCaretUp />
               </Expand>
             ) : null}
           </div>
