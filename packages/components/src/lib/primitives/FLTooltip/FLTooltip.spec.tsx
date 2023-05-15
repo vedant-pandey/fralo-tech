@@ -1,10 +1,10 @@
 import { render } from '@testing-library/react';
 
-import FLRadioItem from './FLRadioItem';
+import FLTooltip from './FLTooltip';
 
-describe('FLRadioItem', () => {
+describe('FLTooltip', () => {
   it('should render successfully', () => {
-    const { baseElement } = render(<FLRadioItem />);
+    const { baseElement } = render(<FLTooltip />);
     expect(baseElement).toBeTruthy();
   });
 });
