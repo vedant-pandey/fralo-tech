@@ -4,11 +4,12 @@ import cx from 'classnames';
 import React from 'react';
 import styled from 'styled-components';
 
-import { AiOutlineCheck as CheckmarkSvg } from 'react-icons/ai';
-import { HiOutlinePencil as CustomizeSvg } from 'react-icons/hi';
-import { AiOutlineRedo as RedoSvg } from 'react-icons/ai';
-import { AiOutlineUndo as UndoSvg } from 'react-icons/ai';
-import Image from 'next/image';
+import {
+  AiOutlineCheck,
+  AiOutlineEdit,
+  AiOutlineRedo,
+  AiOutlineUndo,
+} from 'react-icons/ai';
 
 const HeaderDiv = styled.div`
   width: 100%;
@@ -66,12 +67,12 @@ export const Header = () => {
           <div className="flex-1 flex">
             <Tooltip title="Undo" placement="bottom">
               <Item disabled={!canUndo} onClick={() => actions.history.undo()}>
-                <Image src={UndoSvg} alt="" />
+                <AiOutlineUndo />
               </Item>
             </Tooltip>
             <Tooltip title="Redo" placement="bottom">
               <Item disabled={!canRedo} onClick={() => actions.history.redo()}>
-                <Image src={RedoSvg} alt="" />
+                <AiOutlineRedo />
               </Item>
             </Tooltip>
           </div>
@@ -91,9 +92,9 @@ export const Header = () => {
           >
             {enabled ? 'Checkmark' : 'Customize'}
             {enabled ? (
-              <Image src={CheckmarkSvg} alt="" />
+              <AiOutlineCheck />
             ) : (
-              <Image src={CustomizeSvg} alt="" />
+              <AiOutlineEdit />
             )}
             {enabled ? 'Finish Editing' : 'Edit'}
           </Btn>

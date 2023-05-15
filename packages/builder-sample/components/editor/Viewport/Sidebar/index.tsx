@@ -4,8 +4,7 @@ import React, { useState } from 'react';
 import styled from 'styled-components';
 
 import { SidebarItem } from './SidebarItem';
-import {HiOutlinePencil as CustomizeIcon} from 'react-icons/hi';
-import {BsFillLayersFill as LayerIcon} from 'react-icons/bs';
+import { AiOutlineEdit, AiOutlineApartment } from 'react-icons/ai';
 import { Toolbar } from '../../Toolbar';
 
 export const SidebarDiv = styled.div<{ enabled: boolean }>`
@@ -144,7 +143,7 @@ export const Sidebar = () => {
     <SidebarDiv enabled={enabled} className="sidebar transition bg-white w-2">
       <div className="flex flex-col h-full">
         <SidebarItem
-          icon={CustomizeIcon}
+          icon={AiOutlineEdit}
           title="Customize"
           height={!layersVisible ? 'full' : '55%'}
           visible={toolbarVisible}
@@ -153,7 +152,7 @@ export const Sidebar = () => {
           <Toolbar />
         </SidebarItem>
         <SidebarItem
-          icon={LayerIcon}
+          icon={AiOutlineApartment}
           title="Layers"
           height={!toolbarVisible ? 'full' : '45%'}
           visible={layersVisible}

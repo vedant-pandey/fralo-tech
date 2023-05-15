@@ -1,7 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 
-import { SlArrowUp as Arrow } from 'react-icons/sl';
+import { AiFillCaretUp } from 'react-icons/ai';
 
 const SidebarItemDiv = styled.div<{ visible?: boolean; height?: string }>`
   height: ${(props) =>
@@ -57,12 +57,11 @@ export const SidebarItem: React.FC<SidebarItemProps> = ({
         }`}
       >
         <div className="flex-1 flex items-center">
-          {/* <Image className='w-4 h-4 mr-2' src={icon} alt='' /> */}
           {React.createElement(icon, { className: 'w-4 h-4 mr-2' })}
           <h2 className="text-xs uppercase">{title}</h2>
         </div>
         <Chevron visible={visible}>
-          <Arrow />
+          <AiFillCaretUp />
         </Chevron>
       </HeaderDiv>
       {visible ? (

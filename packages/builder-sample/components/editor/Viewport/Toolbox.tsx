@@ -3,10 +3,12 @@ import { Tooltip } from '@material-ui/core';
 import React from 'react';
 import styled from 'styled-components';
 
-import {AiOutlineLink as ButtonSvg} from 'react-icons/ai';
-import {BiRectangle as SquareSvg} from 'react-icons/bi';
-import {TbSquareLetterT as TypeSvg} from 'react-icons/tb';
-import {ImPlay as YoutubeSvg} from 'react-icons/im';
+import {
+  AiOutlineLink,
+  AiOutlineBorder,
+  AiOutlineFontSize,
+  AiOutlineYoutube,
+} from 'react-icons/ai';
 import { Button } from '../../selectors/Button';
 import { Container } from '../../selectors/Container';
 import { Text } from '../../selectors/Text';
@@ -62,7 +64,7 @@ export const Toolbox = () => {
         >
           <Tooltip title="Container" placement="right">
             <Item className="m-2 pb-2 cursor-pointer block" move>
-              <SquareSvg />
+              <AiOutlineBorder />
             </Item>
           </Tooltip>
         </div>
@@ -73,21 +75,21 @@ export const Toolbox = () => {
         >
           <Tooltip title="Text" placement="right">
             <Item className="m-2 pb-2 cursor-pointer block" move>
-              <TypeSvg />
+              <AiOutlineFontSize />
             </Item>
           </Tooltip>
         </div>
         <div ref={(ref) => create(ref, <Button />)}>
           <Tooltip title="Button" placement="right">
             <Item className="m-2 pb-2 cursor-pointer block" move>
-              <ButtonSvg />
+              <AiOutlineLink />
             </Item>
           </Tooltip>
         </div>
         <div ref={(ref) => create(ref, <Video />)}>
           <Tooltip title="Video" placement="right">
             <Item className="m-2 pb-2 cursor-pointer block" move>
-              <YoutubeSvg />
+              <AiOutlineYoutube />
             </Item>
           </Tooltip>
         </div>

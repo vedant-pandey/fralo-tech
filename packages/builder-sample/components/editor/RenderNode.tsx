@@ -4,9 +4,11 @@ import React, { useEffect, useRef, useCallback } from 'react';
 import ReactDOM from 'react-dom';
 import styled from 'styled-components';
 
-import { AiOutlineArrowUp as ArrowUp } from 'react-icons/ai';
-import { AiOutlineDelete as Delete } from 'react-icons/ai';
-import { BiMove as Move } from 'react-icons/bi';
+import {
+  AiOutlineArrowUp,
+  AiOutlineDelete,
+  AiOutlineDrag,
+} from 'react-icons/ai';
 
 const IndicatorDiv = styled.div`
   height: 30px;
@@ -113,7 +115,7 @@ export const RenderNode = ({ render }) => {
               <h2 className="flex-1 mr-4">{name}</h2>
               {moveable ? (
                 <Btn className="mr-2 cursor-move" ref={drag}>
-                  <Move />
+                  <AiOutlineDrag />
                 </Btn>
               ) : null}
               {id !== ROOT_NODE && (
@@ -123,7 +125,7 @@ export const RenderNode = ({ render }) => {
                     actions.selectNode(parent);
                   }}
                 >
-                  <ArrowUp />
+                  <AiOutlineArrowUp />
                 </Btn>
               )}
               {deletable ? (
@@ -134,7 +136,7 @@ export const RenderNode = ({ render }) => {
                     actions.delete(id);
                   }}
                 >
-                  <Delete />
+                  <AiOutlineDelete />
                 </Btn>
               ) : null}
             </IndicatorDiv>,
