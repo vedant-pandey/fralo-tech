@@ -3,7 +3,6 @@ import { Grid } from '@material-ui/core';
 import React, { ChangeEvent, useCallback } from 'react';
 import { FLRadioGroup, FLSlider, RadioItemProps } from '@fralo-tech/components';
 
-import { ToolbarDropdown } from './ToolbarDropdown';
 import { ToolbarTextInput } from './ToolbarTextInput';
 
 export type ToolbarItemProps = {
@@ -100,17 +99,6 @@ export const ToolbarItem = ({
                 defaultIndex={0}
               />
           </>
-        ) : type === 'select' ? (
-          <ToolbarDropdown
-            value={value || ''}
-            onChange={(value) =>
-              setProp(
-                (props: any) =>
-                  (props[propKey] = onChange ? onChange(value) : value)
-              )
-            }
-            {...props}
-          />
         ) : null}
       </div>
     </Grid>
