@@ -4,7 +4,6 @@ import React from 'react';
 export * from './ToolbarItem';
 export * from './ToolbarSection';
 export * from './ToolbarTextInput';
-export * from './ToolbarDropdown';
 
 export const Toolbar = () => {
   const { active, related } = useEditor((state, query) => {
