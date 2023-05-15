@@ -1,0 +1,16 @@
+import type { Meta } from '@storybook/react';
+import { FLTooltip } from './FLTooltip';
+
+const Story: Meta<typeof FLTooltip> = {
+  component: FLTooltip,
+  title: 'FLTooltip',
+};
+export default Story;
+
+export const Primary = {
+  args: {
+    tooltipLabel: '',
+    sideOffset: 0,
+    delayDuration: 0,
+  },
+};
