@@ -1,5 +1,5 @@
 import type { Meta } from '@storybook/react';
-import { FLTooltip } from './FLTooltip';
+import { FLTooltip } from '.';
 
 const Story: Meta<typeof FLTooltip> = {
   component: FLTooltip,
