@@ -1,5 +1,4 @@
 import { Element, useEditor } from '@fralo-tech/builder-core';
-import { Tooltip } from '@material-ui/core';
 import React from 'react';
 import styled from 'styled-components';
 
@@ -13,6 +12,7 @@ import { Button } from '../../selectors/Button';
 import { Container } from '../../selectors/Container';
 import { Text } from '../../selectors/Text';
 import { Video } from '../../selectors/Video';
+import { FLTooltip } from '@fralo-tech/components';
 
 const ToolboxDiv = styled.div<{ enabled: boolean }>`
   transition: 0.4s cubic-bezier(0.19, 1, 0.22, 1);
@@ -62,36 +62,36 @@ export const Toolbox = () => {
             )
           }
         >
-          <Tooltip title="Container" placement="right">
+          <FLTooltip tooltipLabel="Container" side="right" delayDuration={100}>
             <Item className="m-2 pb-2 cursor-pointer block" move>
               <AiOutlineBorder />
             </Item>
-          </Tooltip>
+          </FLTooltip>
         </div>
         <div
           ref={(ref) =>
             create(ref, <Text fontSize="12" textAlign="left" text="Hi there" />)
           }
         >
-          <Tooltip title="Text" placement="right">
+          <FLTooltip tooltipLabel="Text" side="right" delayDuration={100}>
             <Item className="m-2 pb-2 cursor-pointer block" move>
               <AiOutlineFontSize />
             </Item>
-          </Tooltip>
+          </FLTooltip>
         </div>
         <div ref={(ref) => create(ref, <Button />)}>
-          <Tooltip title="Button" placement="right">
+          <FLTooltip tooltipLabel='Button' side='right' delayDuration={100}>
             <Item className="m-2 pb-2 cursor-pointer block" move>
               <AiOutlineLink />
             </Item>
-          </Tooltip>
+          </FLTooltip>
         </div>
         <div ref={(ref) => create(ref, <Video />)}>
-          <Tooltip title="Video" placement="right">
+          <FLTooltip tooltipLabel='Video' side='right' delayDuration={100}>
             <Item className="m-2 pb-2 cursor-pointer block" move>
               <AiOutlineYoutube />
             </Item>
-          </Tooltip>
+          </FLTooltip>
         </div>
       </div>
     </ToolboxDiv>

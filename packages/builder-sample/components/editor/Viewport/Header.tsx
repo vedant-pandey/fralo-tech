@@ -1,5 +1,4 @@
 import { useEditor } from '@fralo-tech/builder-core';
-import { Tooltip } from '@material-ui/core';
 import cx from 'classnames';
 import React from 'react';
 import styled from 'styled-components';
@@ -10,6 +9,7 @@ import {
   AiOutlineRedo,
   AiOutlineUndo,
 } from 'react-icons/ai';
+import { FLTooltip } from '@fralo-tech/components';
 
 const HeaderDiv = styled.div`
   width: 100%;
@@ -65,16 +65,16 @@ export const Header = () => {
       <div className="items-center flex w-full px-4 justify-end">
         {enabled && (
           <div className="flex-1 flex">
-            <Tooltip title="Undo" placement="bottom">
+            <FLTooltip tooltipLabel="Undo" side="bottom" delayDuration={100}>
               <Item disabled={!canUndo} onClick={() => actions.history.undo()}>
                 <AiOutlineUndo />
               </Item>
-            </Tooltip>
-            <Tooltip title="Redo" placement="bottom">
+            </FLTooltip>
+            <FLTooltip tooltipLabel="Redo" side="bottom" delayDuration={100}>
               <Item disabled={!canRedo} onClick={() => actions.history.redo()}>
                 <AiOutlineRedo />
               </Item>
-            </Tooltip>
+            </FLTooltip>
           </div>
         )}
         <div className="flex">
