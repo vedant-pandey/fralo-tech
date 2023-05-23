@@ -99,6 +99,7 @@ export const ToolbarTextInput = ({
             onChange={(color: any) => {
               onChange(color.rgb);
             }}
+            className="fixed"
           />
         </div>
       ) : null}
