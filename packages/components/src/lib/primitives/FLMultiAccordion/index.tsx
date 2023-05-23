@@ -1,14 +1,23 @@
 import styles from './index.module.css';
 
-/* eslint-disable-next-line */
-export interface IndexProps {}
+import * as Accordion from '@radix-ui/react-accordion';
+import { FLAccordionItem, FLAccordionItemProps } from '../FLAccordion';
 
-export function Index(props: IndexProps) {
-  return (
-    <div className={styles['container']}>
-      <h1>Welcome to Index!</h1>
-    </div>
-  );
+export interface FLMultiAccordionProps {
+  items: FLAccordionItemProps[]
 }
 
-export default Index;
+export function FLMultiAccordion({items}: FLMultiAccordionProps) {
+  return (
+    <Accordion.Root
+      className="bg-mauve6 w-[300px] rounded-md shadow-[0_2px_10px] shadow-black/5"
+      type="single"
+    >
+      {items.map((itemProps, itemInd) => (
+        <FLAccordionItem {...itemProps} accordionName={`${itemInd}`} />
+      ))}
+    </Accordion.Root>
+    )
+}
+
+export default FLMultiAccordion;
