@@ -19,7 +19,6 @@ export const FLAccordion = (props: FLAccordionItemProps) => {
     <Accordion.Root
       className="bg-mauve6 w-[300px] rounded-md shadow-[0_2px_10px] shadow-black/5"
       type="single"
-      defaultValue="item-1"
       collapsible
     >
       <FLAccordionItem {...props} />

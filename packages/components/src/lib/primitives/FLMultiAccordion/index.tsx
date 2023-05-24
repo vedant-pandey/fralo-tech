@@ -12,6 +12,7 @@ export function FLMultiAccordion({items}: FLMultiAccordionProps) {
     <Accordion.Root
       className="bg-mauve6 w-[300px] rounded-md shadow-[0_2px_10px] shadow-black/5"
       type="single"
+      collapsible
     >
       {items.map((itemProps, itemInd) => (
         <FLAccordionItem {...itemProps} accordionName={`${itemInd}`} />
