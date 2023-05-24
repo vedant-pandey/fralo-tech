@@ -2,7 +2,6 @@ import { useEditor } from '@fralo-tech/builder-core';
 import React from 'react';
 
 export * from './ToolbarItem';
-export * from './ToolbarSection';
 export * from './ToolbarTextInput';
 
 export const Toolbar = () => {

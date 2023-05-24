@@ -1,18 +1,27 @@
 import React from 'react';
 
-import { ToolbarSection, ToolbarItem } from '../../editor';
+import { ToolbarItem } from '../../editor';
+import { FLMultiAccordion } from '@fralo-tech/components';
 
 export const VideoSettings = () => {
   return (
     <React.Fragment>
-      <ToolbarSection title="Youtube">
-        <ToolbarItem
-          full={true}
-          propKey="videoId"
-          type="text"
-          label="Video ID"
-        />
-      </ToolbarSection>
+      <FLMultiAccordion
+        items={[
+          {
+            title: 'Youtube',
+            children: [
+              <ToolbarItem
+                full={true}
+                propKey="videoId"
+                type="text"
+                label="Video ID"
+                key={0}
+              />,
+            ],
+          },
+        ]}
+      />
     </React.Fragment>
   );
 };

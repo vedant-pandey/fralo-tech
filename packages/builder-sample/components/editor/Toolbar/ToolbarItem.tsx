@@ -47,8 +47,6 @@ export const ToolbarItem = ({
     }, 1000);
   }, [index, onChange, propKey, propValue, setProp]);
 
-  console.log(`Here - `, value)
-
   const radioChangeEvent = (e: React.ChangeEvent<HTMLInputElement>): void => {
     const value = e.target.value;
     setProp((props: any) => {

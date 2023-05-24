@@ -1,5 +1,5 @@
 import type { Meta } from '@storybook/react';
-import { FLRadioGroup } from './FLRadioGroup';
+import { FLRadioGroup } from '.';
 
 const Story: Meta<typeof FLRadioGroup> = {
   component: FLRadioGroup,
