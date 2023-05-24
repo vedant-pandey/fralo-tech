@@ -27,10 +27,13 @@ export const FLAccordion = (props: FLAccordionItemProps) => {
   );
 };
 
-export const FLAccordionItem = (
-  { title, props, summary, children, accordionName }: FLAccordionItemProps,
-  ref
-) => {
+export const FLAccordionItem = ({
+  title,
+  props,
+  summary,
+  children,
+  accordionName,
+}: FLAccordionItemProps) => {
   if (!accordionName) accordionName = 'DEFAULT';
 
   const { nodeProps } = useNode((node) => ({
