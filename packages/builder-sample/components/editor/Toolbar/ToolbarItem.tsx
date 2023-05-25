@@ -47,13 +47,7 @@ export const ToolbarItem = ({
     }, 1000);
   }, [index, onChange, propKey, propValue, setProp]);
 
-  const radioChangeEvent = (e: React.ChangeEvent<HTMLInputElement>): void => {
-    const value = e.target.value;
-    setProp((props: any) => {
-      props[propKey] = onChange ? onChange(value) : value;
-    });
-  };
-  const radioChangeEvent2 = (value: string): void => {
+  const radioChangeEvent = (value: string): void => {
     setProp((props: any) => {
       props[propKey] = onChange ? onChange(value) : value;
     });
@@ -93,7 +87,7 @@ export const ToolbarItem = ({
             ) : null}
               <FLRadioGroup
                 radioValues={props.radioValues}
-                onChange={radioChangeEvent2}
+                onChange={radioChangeEvent}
                 defaultIndex={0}
               />
           </>
