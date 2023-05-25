@@ -5,7 +5,8 @@
   "scripts": {
     "client:dev": "nx run client:serve:development",
     "builder:serve": "nx run builder-sample:serve:development",
-    "ui:story": "yarn nx run components:storybook"
+    "ui:story": "yarn nx run components:storybook",
+    "ui:create:primitive": "yarn nx generate @nx/react:component $name --project=components --directory=lib/primitives --fileName=index --pascalCaseDirectory --pascalCaseFiles --no-interactive"
   },
   "private": true,
   "dependencies": {
