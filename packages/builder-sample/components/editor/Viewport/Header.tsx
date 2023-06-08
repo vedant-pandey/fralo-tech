@@ -63,15 +63,14 @@ export const Header = () => {
   useEffect(() => {
     const handleKeyDown = (event: any) => {
       if (event.ctrlKey || event.metaKey) {
-        if (event.key === 'z' || event.key === 'Z') {
+        if (event.key.toLowerCase() === 'z') {
           event.preventDefault();
-          if (canUndo) {
+          if (event.shiftKey) {
+            if (canRedo) {
+              actions.history.redo();
+            }
+          } else if (canUndo) {
             actions.history.undo();
-          }
-        } else if (event.key === 'y' || event.key === 'Y') {
-          event.preventDefault();
-          if (canRedo) {
-            actions.history.redo();
           }
         }
       }
@@ -83,7 +82,6 @@ export const Header = () => {
       window.removeEventListener('keydown', handleKeyDown);
     };
   }, [canUndo, canRedo, actions]);
-
 
   return (
     <HeaderDiv className="header text-white transition w-full">
