@@ -2,7 +2,7 @@ import { useEditor } from '@fralo-tech/builder-core';
 import cx from 'classnames';
 import React from 'react';
 import styled from 'styled-components';
-
+import { useEffect } from 'react';
 import {
   AiOutlineCheck,
   AiOutlineEdit,
@@ -59,6 +59,29 @@ export const Header = () => {
     canUndo: query.history.canUndo(),
     canRedo: query.history.canRedo(),
   }));
+
+  useEffect(() => {
+    const handleKeyDown = (event: any) => {
+      if (event.ctrlKey || event.metaKey) {
+        if (event.key.toLowerCase() === 'z') {
+          event.preventDefault();
+          if (event.shiftKey) {
+            if (canRedo) {
+              actions.history.redo();
+            }
+          } else if (canUndo) {
+            actions.history.undo();
+          }
+        }
+      }
+    };
+
+    window.addEventListener('keydown', handleKeyDown);
+
+    return () => {
+      window.removeEventListener('keydown', handleKeyDown);
+    };
+  }, [canUndo, canRedo, actions]);
 
   return (
     <HeaderDiv className="header text-white transition w-full">
