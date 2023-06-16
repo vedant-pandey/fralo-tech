@@ -1,5 +1,4 @@
 import { useNode } from '@fralo-tech/builder-core';
-import { Grid } from '@material-ui/core';
 import React, { ChangeEvent, useCallback } from 'react';
 import { FLRadioGroup, FLSlider, RadioItemProps } from '@fralo-tech/components';
 
@@ -53,46 +52,48 @@ export const ToolbarItem = ({
     });
   };
   return (
-    <Grid item xs={full ? 12 : 6}>
-      <div className="mb-2">
-        {['text', 'color', 'bg', 'number'].includes(type) ? (
-          <ToolbarTextInput
-            {...props}
-            type={type}
-            value={value}
-            onChange={(value) => {
-              setProp((props: any) => {
-                if (Array.isArray(propValue)) {
-                  props[propKey][index] = onChange ? onChange(value) : value;
-                } else {
-                  props[propKey] = onChange ? onChange(value) : value;
-                }
-              }, 500);
-            }}
-          />
-        ) : type === 'slider' ? (
-          <>
-            {props.label ? (
-              <h4 className="text-sm text-light-gray-2">{props.label}</h4>
-            ) : null}
-            <FLSlider
-              value={value ? parseInt(value) : 0}
-              onChange={sliderHandler}
+    <>
+      <div className={`${full ? 'w-full basis-full': 'w-1/2 basis-1/2'}`}>
+        <div className="mb-2">
+          {['text', 'color', 'bg', 'number'].includes(type) ? (
+            <ToolbarTextInput
+              {...props}
+              type={type}
+              value={value}
+              onChange={(value) => {
+                setProp((props: any) => {
+                  if (Array.isArray(propValue)) {
+                    props[propKey][index] = onChange ? onChange(value) : value;
+                  } else {
+                    props[propKey] = onChange ? onChange(value) : value;
+                  }
+                }, 500);
+              }}
             />
-          </>
-        ) : type === 'radio' ? (
-          <>
-            {props.label ? (
-              <h4 className="text-sm text-light-gray-2">{props.label}</h4>
-            ) : null}
-              <FLRadioGroup
-                radioValues={props.radioValues}
-                onChange={radioChangeEvent}
-                defaultIndex={0}
+          ) : type === 'slider' ? (
+            <>
+              {props.label ? (
+                <h4 className="text-sm text-light-gray-2">{props.label}</h4>
+              ) : null}
+              <FLSlider
+                value={value ? parseInt(value) : 0}
+                onChange={sliderHandler}
               />
-          </>
-        ) : null}
+            </>
+          ) : type === 'radio' ? (
+            <>
+              {props.label ? (
+                <h4 className="text-sm text-light-gray-2">{props.label}</h4>
+              ) : null}
+                <FLRadioGroup
+                  radioValues={props.radioValues}
+                  onChange={radioChangeEvent}
+                  defaultIndex={0}
+                />
+            </>
+          ) : null}
+        </div>
       </div>
-    </Grid>
+    </>
   );
 };

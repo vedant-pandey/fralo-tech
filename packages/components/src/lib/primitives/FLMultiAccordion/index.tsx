@@ -1,6 +1,5 @@
 import styles from './index.module.css';
 import { RxChevronDown } from 'react-icons/rx';
-import { Divider, Grid } from '@material-ui/core';
 import { useNode } from '@fralo-tech/builder-core';
 import * as Accordion from '@radix-ui/react-accordion';
 
@@ -40,14 +39,28 @@ export const FLAccordionItem = ({
     >
       <Accordion.Trigger className="w-full text-violet11 shadow-mauve6 hover:bg-mauve2 group flex h-[45px] flex-1 cursor-default items-center justify-between bg-white px-5 text-[15px] leading-none shadow-[0_1px_0] outline-none">
         <div className="px-6 w-full">
-          <Grid container direction="row" alignItems="center" spacing={3}>
-            <Grid item xs={4}>
+          <div className='flex wrap w-full m-[-12px] items-center'>
+            <div className='flex-grow-0 mw-1/3 flex-basis-1/3 p-[12px]'
+              style={{
+                padding: '12px',
+                flexGrow: '0',
+                maxWidth: '33.333333%',
+                flexBasis: '33.333333%',
+              }}
+            >
               <h5 className="text-sm text-light-gray-1 text-left font-medium text-dark-gray">
                 {title}
               </h5>
-            </Grid>
+            </div>
             {summary && props ? (
-              <Grid item xs={8}>
+              <div
+                style={{
+                  flexGrow: '0',
+                  maxWidth: '66.666667%',
+                  flexBasis: '66.666667%',
+                  padding: '12px',
+                }}
+              >
                 <h5 className="text-light-gray-2 text-sm text-right text-dark-blue">
                   {summary(
                     props.reduce((acc: any, key: any) => {
@@ -56,9 +69,9 @@ export const FLAccordionItem = ({
                     }, {})
                   )}
                 </h5>
-              </Grid>
+              </div>
             ) : null}
-          </Grid>
+          </div>
         </div>
         <RxChevronDown
           className="text-violet10 ease-[cubic-bezier(0.87,_0,_0.13,_1)] transition-transform duration-300 group-data-[state=open]:rotate-180"
@@ -66,10 +79,13 @@ export const FLAccordionItem = ({
         />
       </Accordion.Trigger>
       <Accordion.Content className="text-mauve11 bg-mauve2 data-[state=open]:animate-slideDown data-[state=closed]:animate-slideUp overflow-hidden text-[15px]">
-        <Divider />
-        <Grid container spacing={1}>
+        <div style={{
+          "display": "flex",
+          "flexWrap": "wrap",
+          "width": "calc(100% + 8px)",
+        }}>
           {children}
-        </Grid>
+        </div>
       </Accordion.Content>
     </Accordion.Item>
   );
@@ -79,11 +95,11 @@ export function FLMultiAccordion({ items }: FLMultiAccordionProps) {
   return (
     <Accordion.Root
       className="bg-mauve6 w-[300px] rounded-md shadow-[0_2px_10px] shadow-black/5"
-      type="single"
-      collapsible
+      type="multiple"
+      // collapsible
     >
       {items.map((itemProps, itemInd) => (
-        <FLAccordionItem {...itemProps} accordionName={`${itemInd}`} />
+        <FLAccordionItem {...itemProps} accordionName={`${2 * itemInd}`} />
       ))}
     </Accordion.Root>
   );
