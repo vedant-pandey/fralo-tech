@@ -62,8 +62,10 @@ export function FLSlider(props: FLSliderProps) {
   })(Slider);
 
   return (
-    <SliderStyled {...props} />
-  );
+      <>
+      <SliderStyled {...props} />
+      </>
+      );
 }
 
 export default FLSlider;

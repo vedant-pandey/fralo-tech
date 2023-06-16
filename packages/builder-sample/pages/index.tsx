@@ -25,7 +25,7 @@ const theme = createTheme({
 export function Index() {
   return (
     <ThemeProvider theme={theme}>
-      <div className="h-full h-screen">
+      <div className="h-screen">
         <Editor
           resolver={{
             Container,
