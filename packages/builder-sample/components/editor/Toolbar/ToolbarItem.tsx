@@ -1,6 +1,6 @@
 import { useNode } from '@fralo-tech/builder-core';
 import React, { ChangeEvent, useCallback } from 'react';
-import { FLRadioGroup, FLSlider, RadioItemProps } from '@fralo-tech/components';
+import { FLDragSlider, FLRadioGroup, FLSlider, FLSliderOld, RadioItemProps } from '@fralo-tech/components';
 
 import { ToolbarTextInput } from './ToolbarTextInput';
 
@@ -75,6 +75,11 @@ export const ToolbarItem = ({
               {props.label ? (
                 <h4 className="text-sm text-light-gray-2">{props.label}</h4>
               ) : null}
+              <FLSliderOld
+                value={value ? parseInt(value) : 0}
+                onChange={sliderHandler}
+              />
+              <FLDragSlider onChange={sliderHandler} defaultValue={98}/>
               <FLSlider
                 value={value ? parseInt(value) : 0}
                 onChange={sliderHandler}

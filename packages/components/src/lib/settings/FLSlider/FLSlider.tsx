@@ -5,7 +5,7 @@ import { withStyles } from '@material-ui/core/styles';
 
 export type FLSliderProps = SliderProps;
 
-export function FLSlider(props: FLSliderProps) {
+export function FLSliderOld(props: FLSliderProps) {
   const iOSBoxShadow =
     '0 3px 1px rgba(0,0,0,0.1),0 4px 8px rgba(0,0,0,0.13),0 0 0 1px rgba(0,0,0,0.02)';
 
@@ -68,4 +68,4 @@ export function FLSlider(props: FLSliderProps) {
       );
 }
 
-export default FLSlider;
+export default FLSliderOld;
